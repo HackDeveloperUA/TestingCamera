@@ -13,6 +13,7 @@
 		0AEC7D441BE751C200CE8F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC7D421BE751C200CE8F56 /* Main.storyboard */; };
 		0AEC7D461BE751C200CE8F56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC7D451BE751C200CE8F56 /* Assets.xcassets */; };
 		0AEC7D491BE751C200CE8F56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC7D471BE751C200CE8F56 /* LaunchScreen.storyboard */; };
+		0AEC7D511BE766ED00CE8F56 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AEC7D501BE766ED00CE8F56 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0AEC7D451BE751C200CE8F56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AEC7D481BE751C200CE8F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AEC7D4A1BE751C200CE8F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AEC7D501BE766ED00CE8F56 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AEC7D511BE766ED00CE8F56 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 		0AEC7D2D1BE751C200CE8F56 = {
 			isa = PBXGroup;
 			children = (
+				0AEC7D501BE766ED00CE8F56 /* AVFoundation.framework */,
 				0AEC7D381BE751C200CE8F56 /* TestingCamera */,
 				0AEC7D371BE751C200CE8F56 /* Products */,
 			);
@@ -58,14 +62,10 @@
 		0AEC7D381BE751C200CE8F56 /* TestingCamera */ = {
 			isa = PBXGroup;
 			children = (
-				0AEC7D3C1BE751C200CE8F56 /* AppDelegate.h */,
-				0AEC7D3D1BE751C200CE8F56 /* AppDelegate.m */,
 				0AEC7D3F1BE751C200CE8F56 /* ViewController.h */,
 				0AEC7D401BE751C200CE8F56 /* ViewController.m */,
 				0AEC7D421BE751C200CE8F56 /* Main.storyboard */,
 				0AEC7D451BE751C200CE8F56 /* Assets.xcassets */,
-				0AEC7D471BE751C200CE8F56 /* LaunchScreen.storyboard */,
-				0AEC7D4A1BE751C200CE8F56 /* Info.plist */,
 				0AEC7D391BE751C200CE8F56 /* Supporting Files */,
 			);
 			path = TestingCamera;
@@ -74,6 +74,10 @@
 		0AEC7D391BE751C200CE8F56 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0AEC7D3C1BE751C200CE8F56 /* AppDelegate.h */,
+				0AEC7D3D1BE751C200CE8F56 /* AppDelegate.m */,
+				0AEC7D471BE751C200CE8F56 /* LaunchScreen.storyboard */,
+				0AEC7D4A1BE751C200CE8F56 /* Info.plist */,
 				0AEC7D3A1BE751C200CE8F56 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -264,6 +268,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestingCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tt.TestingCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,6 +280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestingCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tt.TestingCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
