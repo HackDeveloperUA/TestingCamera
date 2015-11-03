@@ -69,13 +69,28 @@
                                         </constraints>
                                         <state key="normal" title="Next"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAl-dj-vc3">
+                                        <rect key="frame" x="8" y="8" width="87" height="55"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="0.70072705034477423" blue="0.90488603458915007" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="87" id="z5R-r4-xjv"/>
+                                        </constraints>
+                                        <state key="normal" title="Library"/>
+                                        <connections>
+                                            <action selector="showPhotoLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0jK-Sr-ibI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.36641339522531657" green="0.51093992157987977" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Zys-Ku-LaX" firstAttribute="leading" secondItem="M96-zA-PAC" secondAttribute="trailing" constant="8" id="7m9-hU-USA"/>
+                                    <constraint firstItem="LAl-dj-vc3" firstAttribute="leading" secondItem="BVc-gZ-5Jy" secondAttribute="leading" constant="8" id="EMD-gJ-pkT"/>
+                                    <constraint firstAttribute="bottom" secondItem="LAl-dj-vc3" secondAttribute="bottom" constant="11" id="Gxa-lO-gTL"/>
                                     <constraint firstItem="M96-zA-PAC" firstAttribute="centerY" secondItem="BVc-gZ-5Jy" secondAttribute="centerY" id="Scx-aN-fEh"/>
                                     <constraint firstItem="Zys-Ku-LaX" firstAttribute="centerY" secondItem="BVc-gZ-5Jy" secondAttribute="centerY" id="Sg2-zh-apy"/>
+                                    <constraint firstItem="LAl-dj-vc3" firstAttribute="top" secondItem="BVc-gZ-5Jy" secondAttribute="top" constant="8" id="ahi-wq-JB4"/>
                                     <constraint firstItem="M96-zA-PAC" firstAttribute="centerX" secondItem="BVc-gZ-5Jy" secondAttribute="centerX" id="utf-UU-N0B"/>
                                     <constraint firstItem="Zys-Ku-LaX" firstAttribute="height" secondItem="M96-zA-PAC" secondAttribute="height" id="wfe-Co-Pd7"/>
                                 </constraints>

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MobileCoreServices/UTCoreTypes.h>
 
 @interface ViewController : UIViewController
 
 - (IBAction)takePhoto:(id)sender;
+- (IBAction)showPhotoLibrary:(id)sender;
 
 @end
 

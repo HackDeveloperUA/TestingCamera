@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 
-@interface ViewController ()
+@interface ViewController ()  <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView*  frameForCapture;
 
@@ -32,6 +32,46 @@
     
     [super viewWillAppear:YES];
     
+    
+    
+}
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)showPhotoLibrary:(id)sender {
+    
+    UIImagePickerController *imagePicker =
+    [[UIImagePickerController alloc] init];
+    
+    [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    
+    [imagePicker setDelegate:self];
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+   
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
+
+
+
+-(void) startWorkPhotoCamera {
+    
     self.session = [[AVCaptureSession alloc] init];
     [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
     
@@ -44,60 +84,28 @@
         [self.session addInput:deviceInput];
     }
     
-    
-    
+   
     
     AVCaptureVideoPreviewLayer* previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    
-    /*
-    CALayer* rootLayer = self.view.layer;
-    [rootLayer setMasksToBounds:YES];
-    
-    CGRect frame = self.frameForCapture.frame;
-    
-    previewLayer.frame = frame;
-    [rootLayer insertSublayer:previewLayer atIndex:0];
-    */
-    
     
     
     CALayer* rootLayer = self.view.layer;
     [rootLayer setMasksToBounds:YES];
     
     CALayer *overlayLayer = [CALayer layer];
-
+    
     
     
     CGRect frame = self.frameForCapture.frame;
     previewLayer.frame = frame;
     overlayLayer.frame = frame;
-
-    
-
-    //UIImage *stretchableImage = (id)[UIImage imageNamed:@"150px-Box_g"];
-    //overlayLayer.contents  = (id)stretchableImage.CGImage;
-    //overlayLayer.backgroundColor  = [UIColor colorWithRed:0.23 green:0.79 blue:0.30 alpha:0.7].CGColor;
     
     
-
-    
-
     [rootLayer insertSublayer:previewLayer atIndex:0];
-    //[rootLayer insertSublayer:overlayLayer atIndex:1];
-    
-    /*
-     
-     
-     CALayer *overlayLayer = [CALayer layer];
-     UIImage *overlayImage = nil;
-     if (_frameSelectSegment.selectedSegmentIndex == 0) {
-     overlayImage = [UIImage imageNamed:@"Frame-1.png"];
-     
-    */
-    
-    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
 
+    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+    
     NSDictionary* outputSettings = @{ AVVideoCodecJPEG : AVVideoCodecKey };
     
     
@@ -106,15 +114,9 @@
     
     [self.session startRunning];
     
-    
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (IBAction)takePhoto:(id)sender {
     
